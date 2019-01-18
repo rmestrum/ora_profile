@@ -154,7 +154,7 @@ class ora_profile::database::db_definition_template(
       memory_mgmt_type          => $memory_mgmt_type,
       storage_type              => $storage_type,
       puppet_download_mnt_point => $puppet_download_mnt_point,
-      sys_password              => unwrap($sys_password),
+      sys_password              => $sys_password,
       db_conf_type              => $db_conf_type,
       cluster_nodes             => $db_cluster_nodes,
       before                    => Ora_setting[$db_instance_name],
