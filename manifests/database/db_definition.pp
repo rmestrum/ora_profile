@@ -102,6 +102,7 @@ class ora_profile::database::db_definition(
   #
   ora_database{$dbname:
     ensure                       => present,
+    noop                         => ora_install::changed_oracle_home_for($dbname, $oracle_home),
     init_ora_content             => template($init_ora_template),
     oracle_base                  => $oracle_base,
     oracle_home                  => $oracle_home,
