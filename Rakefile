@@ -32,7 +32,7 @@ end
 desc "Run Litmus setup"
 task :litmus do
   docker_image =  'enterprisemodules/acc_base'
-  node_name = 'orawls.example.com'
+  node_name = 'oradb'
   Rake::Task['litmus:litmus_setup'].invoke(docker_image, node_name)
 end
 if defined?(PuppetLint)
